@@ -30,6 +30,7 @@
     "apollo-server-express": "^2.14.2",
     "class-transformer": "^0.2.3",
     "class-validator": "^0.12.2",
+    "dotenv": "^8.2.0",
     "graphql": "^15.0.0",
     "graphql-tools": "^6.0.8",
     "mongoose": "^5.9.18",

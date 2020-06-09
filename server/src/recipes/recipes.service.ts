@@ -5,7 +5,7 @@ import {
 } from '@nestjs/common'
 import { InjectModel } from '@nestjs/mongoose'
 import { Model } from 'mongoose'
-import { Recipe as RecipeDb } from '../db/models/recipe.db.model'
+import { Recipe as RecipeDb } from '../database/schema/recipe.schema'
 import { NewRecipeInput } from './dto/new-recipe.input'
 import { RecipesArgs } from './dto/recipes.args'
 import { UpdateRecipeInput } from './dto/update-recipe.input'
