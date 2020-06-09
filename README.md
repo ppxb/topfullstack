@@ -10,7 +10,7 @@ WIP
 
 - [x] 完成后台管理的 graphql 增删改查
 - [x] 完成服务器端 graphql 架构
-      — [ ] 增加 graphql 的 swagger 支持，虽然 playground 也很好用
+- [ ] 增加 graphql 的 swagger 支持，虽然 playground 也很好用
 - [ ] 后台管理基于 graphql 的权限管理
 - [ ] web 端注册登录
 - [ ] web 端 auth 模块
