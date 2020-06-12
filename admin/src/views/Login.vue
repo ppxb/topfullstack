@@ -15,7 +15,7 @@
                     name="login"
                     prepend-icon="mdi-account"
                     type="text"
-                    v-model="username"
+                    v-model="loginAdmin.username"
                   ></v-text-field>
 
                   <v-text-field
@@ -24,7 +24,7 @@
                     name="password"
                     prepend-icon="mdi-lock"
                     type="password"
-                    v-model="password"
+                    v-model="loginAdmin.password"
                   ></v-text-field>
                 </v-form>
               </v-card-text>
@@ -42,14 +42,18 @@
 
 <script lang="ts">
 import { Vue, Component } from 'vue-property-decorator'
+import { AdminModule } from '../store/modules/admin'
 
 @Component({})
 export default class Login extends Vue {
-  username: string = ''
-  password: string = ''
+  loginAdmin = {}
 
-  handleSubmit() {
-    console.log(this.username, this.password)
+  async handleSubmit() {
+    await AdminModule.Login({
+      apollo: this.$apollo,
+      query: this.loginAdmin,
+      router: this.$router
+    })
   }
 }
 </script>

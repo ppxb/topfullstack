@@ -1,37 +1,51 @@
 import Vue from 'vue'
 import VueRouter, { RouteConfig } from 'vue-router'
-import Dashboard from '../views/Dashboard.vue'
+import Layout from '../components/Layout.vue'
 
 Vue.use(VueRouter)
 
-const routes: RouteConfig[] = [
+export const publicRoutes: RouteConfig[] = [
   {
     path: '/',
-    component: Dashboard,
+    component: Layout,
+    redirect: '/dashboard',
     children: [
       {
-        name: 'home',
-        path: '/',
-        component: async () => import('../views/Home.vue')
-      },
-      {
-        name: 'test',
-        path: '/test',
-        component: async () => import('../views/GraphQL.vue')
+        path: 'dashboard',
+        name: 'Dashboard',
+        component: async () =>
+          import(/* webpackChunkName: "dashboard" */ '../views/Home.vue')
       }
     ]
   },
   {
-    name: 'login',
     path: '/login',
-    component: async () => import('../views/Login.vue')
+    component: async () =>
+      import(/* webpackChunkName: "login" */ '../views/Login.vue')
+  }
+]
+
+export const authRoutes: RouteConfig[] = [
+  {
+    path: '/graphql',
+    component: Layout,
+    children: [
+      {
+        path: '/',
+        component: async () =>
+          import(/* webpackChunkName: "graphql" */ '../views/GraphQL.vue'),
+        meta: {
+          auth: 'admin'
+        }
+      }
+    ]
   }
 ]
 
 const router = new VueRouter({
   mode: 'history',
   base: process.env.BASE_URL,
-  routes
+  routes: publicRoutes
 })
 
 export default router

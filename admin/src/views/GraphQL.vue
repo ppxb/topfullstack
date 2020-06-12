@@ -52,12 +52,8 @@
 
             <v-card-actions>
               <v-spacer></v-spacer>
-              <v-btn color="blue darken-1" text @click="dialog = false"
-                >取消</v-btn
-              >
-              <v-btn color="blue darken-1" text @click="handleSubmit"
-                >提交</v-btn
-              >
+              <v-btn color="blue darken-1" text @click="close">取消</v-btn>
+              <v-btn color="blue darken-1" text @click="save">提交</v-btn>
             </v-card-actions>
           </v-card>
         </v-dialog>
@@ -77,6 +73,7 @@
 <script lang="ts">
 import { Vue, Component } from 'vue-property-decorator'
 import gql from 'graphql-tag'
+import { getRecipes } from '../graphql/querys'
 
 interface Recipe {
   _id?: string
@@ -87,15 +84,7 @@ interface Recipe {
 
 @Component({
   apollo: {
-    list: gql`
-      query {
-        list: recipes {
-          _id
-          title
-          description
-        }
-      }
-    `
+    list: getRecipes
   }
 })
 export default class Test extends Vue {
@@ -128,7 +117,15 @@ export default class Test extends Vue {
     return this.editedIndex === -1 ? '新增' : '编辑'
   }
 
-  handleSubmit() {
+  close() {
+    this.dialog = false
+    this.$nextTick(() => {
+      this.editedItem = {}
+      this.editedIndex = -1
+    })
+  }
+
+  save() {
     const recipe = this.editedItem
     if (this.editedIndex === -1) {
       this.$apollo
@@ -147,8 +144,6 @@ export default class Test extends Vue {
           }
         })
         .then(data => {
-          this.dialog = false
-          this.editedItem = {}
           this.$apollo.queries.list.refetch()
         })
     } else {
@@ -169,11 +164,10 @@ export default class Test extends Vue {
           }
         })
         .then(data => {
-          this.dialog = false
-          this.editedItem = {}
           this.$apollo.queries.list.refetch()
         })
     }
+    this.close()
   }
 
   confirm(item: Recipe) {

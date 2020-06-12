@@ -12,7 +12,7 @@ export const genPsd = (str: string) => {
   })
 }
 
-export const comparePsd = (psd: string, hash: string) => {
+export const comparePwd = (psd: string, hash: string) => {
   return new Promise((resolve, reject) => {
     compare(psd, hash, (err, isMatch) => {
       if (err) reject(err)

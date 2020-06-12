@@ -2,6 +2,23 @@
 # THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
 # ------------------------------------------------------
 
+type AdminType {
+  _id: ID!
+  username: String!
+  password: String!
+  nickname: String!
+  avatar: String!
+  roles: [String!]!
+}
+
+type AdminAuthType {
+  """登录成功后返回的Admin对象"""
+  admin: AdminType!
+
+  """登录成功后返回的token"""
+  token: String!
+}
+
 type RecipeType {
   _id: ID!
   title: String!
@@ -9,7 +26,7 @@ type RecipeType {
 }
 
 type Query {
-  admin: [String!]!
+  auth(username: String!, password: String!): AdminAuthType!
   recipe(id: String!): RecipeType!
   recipes(skip: Int = 0, take: Int = 25): [RecipeType!]!
 }

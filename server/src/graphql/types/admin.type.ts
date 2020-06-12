@@ -12,6 +12,14 @@ export class AdminType {
   nickname: string
   @Field()
   avatar: string
-  @Field()
-  role: number
+  @Field(type => [String])
+  roles: string[]
+}
+
+@ObjectType()
+export class AdminAuthType {
+  @Field(type => AdminType, { description: '登录成功后返回的Admin对象' })
+  admin: AdminType
+  @Field({ description: '登录成功后返回的token' })
+  token: string
 }

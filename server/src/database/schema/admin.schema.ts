@@ -15,7 +15,7 @@ export class Admin extends Document {
   })
   avatar: string
   @Prop({ default: ['admin'] })
-  role: string[]
+  roles: string[]
 }
 
 export const AdminSchema = SchemaFactory.createForClass(Admin)

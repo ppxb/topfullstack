@@ -30,14 +30,19 @@
             dark
             class="my-4"
           ></v-divider>
-          <v-list-item v-else :key="i" link :to="item.path">
+          <v-list-item
+            v-else-if="hasAuth(item)"
+            :key="item.text"
+            link
+            :to="item.path"
+          >
             <v-list-item-action>
               <v-icon>{{ item.icon }}</v-icon>
             </v-list-item-action>
             <v-list-item-content>
-              <v-list-item-title class="grey--text">{{
-                item.text
-              }}</v-list-item-title>
+              <v-list-item-title class="grey--text">
+                {{ item.text }}
+              </v-list-item-title>
             </v-list-item-content>
           </v-list-item>
         </template>
@@ -54,26 +59,33 @@
 
 <script lang="ts">
 import { Vue, Component, Prop } from 'vue-property-decorator'
+import { AdminModule } from '../store/modules/admin'
 
 @Component({})
-export default class Dashboard extends Vue {
-  @Prop() source!: string
-
+export default class Layout extends Vue {
   drawer: boolean = true
   items = [
-    { icon: 'mdi-palette', text: 'Dashboard', path: '/' },
+    { icon: 'mdi-palette', text: 'Dashboard', path: '/dashboard' },
     { divider: true },
     { heading: 'Opertation' },
     {
       icon: 'mdi-radio-tower',
       text: 'Graphql',
-      path: '/test'
+      path: '/graphql',
+      auth: ['editor']
     },
     { divider: true },
     { heading: 'System' },
     { icon: 'mdi-cog', text: 'Settings' },
     { icon: 'mdi-police-badge', text: 'Auth' }
   ]
+
+  hasAuth(item: any) {
+    if (item.auth) {
+      return AdminModule.roles.some(role => item.auth.includes(role))
+    }
+    return true
+  }
 }
 </script>
 
