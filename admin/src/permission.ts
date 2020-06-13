@@ -12,7 +12,7 @@ router.beforeEach(async (to: Route, _: Route, next: any) => {
     } else {
       if (AdminModule.roles.length === 0) {
         try {
-          const roles = ['admin']
+          const roles = ['editor']
           PermissionModule.generateRoutes(roles)
           router.addRoutes(PermissionModule.dynamicRoutes)
           AdminModule.SET_ROLES(roles)

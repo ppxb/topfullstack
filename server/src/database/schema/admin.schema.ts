@@ -1,11 +1,16 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose'
 import { Document } from 'mongoose'
+import { genPwd } from 'src/utils'
 
 @Schema()
 export class Admin extends Document {
   @Prop()
   username: string
-  @Prop()
+  @Prop({
+    set(v: string) {
+      return v && genPwd(v)
+    }
+  })
   password: string
   @Prop({ default: 'admin' })
   nickname: string
