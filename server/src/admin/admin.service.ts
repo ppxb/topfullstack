@@ -7,7 +7,7 @@ import { JwtService } from '@nestjs/jwt'
 import { InjectModel } from '@nestjs/mongoose'
 import { Model } from 'mongoose'
 import { Admin } from 'src/database/schema'
-import { AdminAuthType } from 'src/graphql/types/admin.type'
+import { AdminAuthType, AdminType } from 'src/graphql/types/admin.type'
 import { comparePwd } from 'src/utils'
 import { AdminArgs } from './dto/admin.args'
 
@@ -42,5 +42,10 @@ export class AdminService {
       admin: res,
       token: this.jwtService.sign(String(res._id))
     }
+  }
+
+  async getAdminInfo(token: string): Promise<AdminType> {
+    const id = this.jwtService.decode(token)
+    return this.adminModel.findById(id)
   }
 }

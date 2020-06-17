@@ -44,6 +44,9 @@ class Admin extends VuexModule implements IAdminState {
   }
 
   @Action
+  async GetAdminInfo(parmas: any) {}
+
+  @Action
   ResetToken() {
     removeToken()
     this.SET_TOKEN('')

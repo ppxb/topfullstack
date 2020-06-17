@@ -12,4 +12,9 @@ export class AdminResolver {
   async auth(@Args() adminArgs: AdminArgs): Promise<AdminAuthType> {
     return await this.adminService.findOne(adminArgs)
   }
+
+  @Query(returns => AdminType)
+  async getAdminInfo(@Args('token') token: string): Promise<AdminType> {
+    return await this.adminService.getAdminInfo(token)
+  }
 }

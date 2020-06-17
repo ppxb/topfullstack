@@ -5,7 +5,7 @@ import { PermissionModule } from './store/modules/permission'
 
 const whiteList = ['/login']
 
-router.beforeEach(async (to: Route, _: Route, next: any) => {
+router.beforeEach(async (to: Route, from: Route, next: any) => {
   if (AdminModule.token) {
     if (to.path === '/login') {
       next({ path: '/' })

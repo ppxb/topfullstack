@@ -19,6 +19,16 @@ type AdminAuthType {
   token: String!
 }
 
+type CourseType {
+  _id: ID!
+  name: String!
+  author: String!
+  vip: Boolean!
+  tags: [String!]!
+  cover: String!
+  episodes: [String!]!
+}
+
 type RecipeType {
   _id: ID!
   title: String!
@@ -26,15 +36,38 @@ type RecipeType {
 }
 
 type Query {
+  course(id: String!): CourseType!
+  courses(skip: Int = 0, take: Int = 25): [CourseType!]!
   auth(username: String!, password: String!): AdminAuthType!
+  getAdminInfo(token: String!): AdminType!
   recipe(id: String!): RecipeType!
   recipes(skip: Int = 0, take: Int = 25): [RecipeType!]!
 }
 
 type Mutation {
+  addCourse(newCourseInput: NewCourseInput!): CourseType!
+  updateCourse(updateCourseInput: UpdateCourseInput!): CourseType!
+  deleteCourse(id: String!): Boolean!
   addRecipe(newRecipeInput: NewRecipeInput!): RecipeType!
   updateRecipe(updateRecipeInput: UpdateRecipeInput!): RecipeType!
   delRecipe(id: String!): Boolean!
+}
+
+input NewCourseInput {
+  name: String!
+  author: String!
+  vip: Boolean!
+  tags: [String!]!
+  cover: String!
+}
+
+input UpdateCourseInput {
+  _id: String!
+  name: String!
+  author: String!
+  vip: Boolean!
+  tags: [String!]!
+  cover: String!
 }
 
 input NewRecipeInput {

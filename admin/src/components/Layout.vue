@@ -6,13 +6,7 @@
         Top&nbsp;
         <span class="font-weight-light">FullStack</span>
       </span>
-      <v-text-field
-        solo-inverted
-        flat
-        hide-details
-        label="Search"
-        prepend-inner-icon="mdi-magnify"
-      ></v-text-field>
+      <v-text-field solo-inverted flat hide-details label="Search" prepend-inner-icon="mdi-magnify"></v-text-field>
       <v-spacer></v-spacer>
     </v-app-bar>
 
@@ -24,25 +18,13 @@
               <v-subheader v-if="item.heading">{{ item.heading }}</v-subheader>
             </v-col>
           </v-row>
-          <v-divider
-            v-else-if="item.divider"
-            :key="i"
-            dark
-            class="my-4"
-          ></v-divider>
-          <v-list-item
-            v-else-if="hasAuth(item)"
-            :key="item.text"
-            link
-            :to="item.path"
-          >
+          <v-divider v-else-if="item.divider" :key="i" dark class="my-4"></v-divider>
+          <v-list-item v-else-if="hasAuth(item)" :key="item.text" link :to="item.path">
             <v-list-item-action>
               <v-icon>{{ item.icon }}</v-icon>
             </v-list-item-action>
             <v-list-item-content>
-              <v-list-item-title class="grey--text">
-                {{ item.text }}
-              </v-list-item-title>
+              <v-list-item-title class="grey--text">{{ item.text }}</v-list-item-title>
             </v-list-item-content>
           </v-list-item>
         </template>
@@ -71,6 +53,12 @@ export default class Layout extends Vue {
     {
       icon: 'mdi-radio-tower',
       text: 'Graphql',
+      path: '/graphql',
+      auth: ['editor']
+    },
+    {
+      icon: 'mdi-radio-tower',
+      text: 'Courses',
       path: '/graphql',
       auth: ['editor']
     },

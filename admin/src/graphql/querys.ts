@@ -11,8 +11,8 @@ export const getRecipes = () => gql`
   }
 `
 
-export const authAdmin = (apllo: DollarApollo<any>, params: any) => {
-  return apllo.query({
+export const authAdmin = (apollo: DollarApollo<any>, params: any) => {
+  return apollo.query({
     query: gql`
       query($username: String!, $password: String!) {
         auth(username: $username, password: $password) {
@@ -24,6 +24,25 @@ export const authAdmin = (apllo: DollarApollo<any>, params: any) => {
             roles
           }
           token
+        }
+      }
+    `,
+    variables: {
+      ...params
+    }
+  })
+}
+
+export const getAdminInfo = (apollo: DollarApollo<any>, params: any) => {
+  return apollo.query({
+    query: gql`
+      query($token: String!) {
+        getAdminInfo(token: $token) {
+          _id
+          username
+          nickname
+          avatar
+          roles
         }
       }
     `,
