@@ -7881,7 +7881,7 @@ vue-property-decorator@^8.4.2:
   resolved "https://registry.npm.taobao.org/vue-property-decorator/download/vue-property-decorator-8.5.0.tgz#9af64c5301413f4732640cc0d046879417e64994"
   integrity sha1-mvZMUwFBP0cyZAzA0EaHlBfmSZQ=
 
-vue-router@^4.0.0-alpha.6:
+vue-router@^4.0.0-alpha.12:
   version "4.0.0-alpha.12"
   resolved "https://registry.npm.taobao.org/vue-router/download/vue-router-4.0.0-alpha.12.tgz#cba18f0a7fcb577d97c8cd10072a9927313db510"
   integrity sha1-y6GPCn/LV32XyM0QByqZJzE9tRA=
@@ -7899,7 +7899,7 @@ vue-template-es2015-compiler@^1.9.0:
   resolved "https://registry.npm.taobao.org/vue-template-es2015-compiler/download/vue-template-es2015-compiler-1.9.1.tgz#1ee3bc9a16ecbf5118be334bb15f9c46f82f5825"
   integrity sha1-HuO8mhbsv1EYvjNLsV+cRvgvWCU=
 
-vue@^3.0.0-beta.1:
+vue@^3.0.0-beta.15:
   version "3.0.0-beta.15"
   resolved "https://registry.npm.taobao.org/vue/download/vue-3.0.0-beta.15.tgz#99f107534755d3a237b51fc1279c43af2fefde6e"
   integrity sha1-mfEHU0dV06I3tR/BJ5xDry/v3m4=
@@ -7908,7 +7908,7 @@ vue@^3.0.0-beta.1:
     "@vue/runtime-dom" "3.0.0-beta.15"
     "@vue/shared" "3.0.0-beta.15"
 
-vuex@^4.0.0-alpha.1:
+vuex@^4.0.0-beta.2:
   version "4.0.0-beta.2"
   resolved "https://registry.npm.taobao.org/vuex/download/vuex-4.0.0-beta.2.tgz#8ced720de70e5549a72b0982199cae3ecc687482"
   integrity sha1-jO1yDecOVUmnKwmCGZyuPsxodII=
