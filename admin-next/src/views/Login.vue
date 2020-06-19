@@ -2,13 +2,30 @@
   <main class="container">
     <section class="content">
       <div class="logo">
-        <svg class="svg" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <svg
+          class="svg"
+          viewBox="0 0 32 32"
+          xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true"
+        >
           <defs>
-            <linearGradient x1="108.695%" x2="12.439%" y1="-14.936%" y2="45.215%" id="uid11-1">
+            <linearGradient
+              x1="108.695%"
+              x2="12.439%"
+              y1="-14.936%"
+              y2="45.215%"
+              id="uid11-1"
+            >
               <stop stop-color="#BDAAF7" stop-opacity="0.4" offset="0%" />
               <stop stop-color="#BDAAF7" offset="100%" />
             </linearGradient>
-            <linearGradient x1="0%" x2="91.029%" y1="118.55%" y2="63.971%" id="uid11-2">
+            <linearGradient
+              x1="0%"
+              x2="91.029%"
+              y1="118.55%"
+              y2="63.971%"
+              id="uid11-2"
+            >
               <stop stop-color="#BDAAF7" stop-opacity="0.4" offset="0%" />
               <stop stop-color="#BDAAF7" offset="100%" />
             </linearGradient>
@@ -39,7 +56,7 @@
           <span>&nbsp;Vue3&nbsp;</span> and
           <span>&nbsp;Typescript</span>
         </div>
-        <button class="btn">Log in</button>
+        <button class="btn" @click="handleLogin">Log in</button>
       </div>
       <footer>
         made with
@@ -47,7 +64,11 @@
       </footer>
     </section>
     <section class="slogan">
-      <a class="author" href="https://dribbble.com/shots/11655162-GlitchGirl" target="_blank">
+      <a
+        class="author"
+        href="https://dribbble.com/shots/11655162-GlitchGirl"
+        target="_blank"
+      >
         <img
           class="avatar"
           src="https://cdn.dribbble.com/users/642793/avatars/normal/73d66133e81b3b89600c31261348a0e2.png?1496853515"
@@ -59,10 +80,24 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { defineComponent, onMounted, ref } from 'vue'
+import { getRecipes } from '../graphql/queries/demo'
+import { ApolloQueryResult } from 'apollo-client'
 
 export default defineComponent({
-  name: 'Login'
+  name: 'Login',
+  setup() {
+    const list = ref([])
+
+    const handleLogin = async () => {
+      list.value = await getRecipes()
+    }
+
+    return {
+      list,
+      handleLogin
+    }
+  }
 })
 </script>
 
@@ -160,7 +195,7 @@ export default defineComponent({
     justify-content: flex-end;
     padding: 20px 80px;
     flex: 3;
-    background: url('../assets/slogan2.jpg');
+    background: url('../assets/slogan.jpg');
     background-size: cover;
     background-position: center;
 
