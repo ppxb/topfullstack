@@ -29,6 +29,10 @@ WIP
 | 服务端 | typescript、nestjs、mongodb、redis、graphql |            -            |
 |  前端  |          nuxtjs、vuetify、graphql           | nuxtjs 支持 Vue3 后重构 |
 
+# Screenshot
+
+![LoginPage](./screenshot/screenshot_20200619160958.png LoginPage)
+
 # 如何使用
 
 ```

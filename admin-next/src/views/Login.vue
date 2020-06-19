@@ -126,7 +126,7 @@ export default defineComponent({
         justify-content: center;
 
         span {
-          color: #9375ff;
+          color: #6236ff;
         }
       }
 
