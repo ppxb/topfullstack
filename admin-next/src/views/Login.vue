@@ -173,6 +173,12 @@ export default defineComponent({
         font-size: 20px;
         color: #fff;
         background: #6236ff;
+        transition: all 0.3s ease;
+
+        &:hover {
+          cursor: pointer;
+          background: rgba(98, 54, 255, 0.8);
+        }
       }
     }
 
