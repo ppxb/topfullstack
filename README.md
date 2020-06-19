@@ -13,7 +13,6 @@ WIP
 - [x] 后台登录鉴权和权限控制 example 完成
 - [ ] 后台鉴权和权限控制的完善以及菜单和部分 UI 的调整
 - [ ] 项目结构调整及代码优化
-- [ ] redis 验证 token
 - [ ] web 端注册登录
 - [ ] web 端 auth 模块
 
@@ -31,7 +30,7 @@ WIP
 
 # Screenshot
 
-![LoginPage](https://github.com/ppxb/topfullstack/blob/master/screenshot/screenshot_20200619160958.png LoginPage)
+![LoginPage](https://github.com/ppxb/topfullstack/blob/master/screenshot/screenshot_20200619160958.png)
 
 # 如何使用
 
