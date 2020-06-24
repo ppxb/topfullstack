@@ -2,30 +2,13 @@
   <main class="container">
     <section class="content">
       <div class="logo">
-        <svg
-          class="svg"
-          viewBox="0 0 32 32"
-          xmlns="http://www.w3.org/2000/svg"
-          aria-hidden="true"
-        >
+        <svg class="svg" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
           <defs>
-            <linearGradient
-              x1="108.695%"
-              x2="12.439%"
-              y1="-14.936%"
-              y2="45.215%"
-              id="uid11-1"
-            >
+            <linearGradient x1="108.695%" x2="12.439%" y1="-14.936%" y2="45.215%" id="uid11-1">
               <stop stop-color="#BDAAF7" stop-opacity="0.4" offset="0%" />
               <stop stop-color="#BDAAF7" offset="100%" />
             </linearGradient>
-            <linearGradient
-              x1="0%"
-              x2="91.029%"
-              y1="118.55%"
-              y2="63.971%"
-              id="uid11-2"
-            >
+            <linearGradient x1="0%" x2="91.029%" y1="118.55%" y2="63.971%" id="uid11-2">
               <stop stop-color="#BDAAF7" stop-opacity="0.4" offset="0%" />
               <stop stop-color="#BDAAF7" offset="100%" />
             </linearGradient>
@@ -64,11 +47,7 @@
       </footer>
     </section>
     <section class="slogan">
-      <a
-        class="author"
-        href="https://dribbble.com/shots/11655162-GlitchGirl"
-        target="_blank"
-      >
+      <a class="author" href="https://dribbble.com/shots/11655162-GlitchGirl" target="_blank">
         <img
           class="avatar"
           src="https://cdn.dribbble.com/users/642793/avatars/normal/73d66133e81b3b89600c31261348a0e2.png?1496853515"
@@ -111,14 +90,14 @@ export default defineComponent({
     flex-direction: column;
     padding: 20px 80px;
     flex: 1;
-    color: #333333;
+    color: #2c3e50;
 
     .logo {
       display: flex;
       align-items: center;
       font-size: 26px;
       margin-bottom: 20px;
-      font-weight: 700;
+      font-weight: 600;
       height: fit-content;
 
       .svg {
@@ -138,20 +117,21 @@ export default defineComponent({
       flex-direction: column;
       flex: 3;
       justify-content: center;
-      color: #333333;
 
       .title {
-        font-size: 5em;
+        font-size: 4.5em;
+        font-weight: 700;
         margin-bottom: 20px;
+        color: #2c3e50;
       }
 
       .input {
         border: none;
         outline: none;
-        padding: 20px;
-        color: #333;
-        font-size: 18px;
-        background: #fafafa;
+        padding: 14px 12px;
+        color: #2c3e50;
+        font-size: 1em;
+        background: #f4f7f8;
         border-radius: 12px;
         margin-bottom: 20px;
       }
@@ -159,6 +139,7 @@ export default defineComponent({
       .desc {
         display: flex;
         justify-content: center;
+        margin-bottom: 32px;
 
         span {
           color: #6236ff;
@@ -167,13 +148,13 @@ export default defineComponent({
 
       .btn {
         border: none;
-        padding: 20px;
+        padding: 14px 12px;
         border-radius: 12px;
-        margin-top: 32px;
-        font-size: 20px;
+        font-size: 1em;
+        font-weight: 600;
         color: #fff;
         background: #6236ff;
-        transition: all 0.3s ease;
+        transition: all 0.25s ease;
 
         &:hover {
           cursor: pointer;
@@ -218,7 +199,7 @@ export default defineComponent({
         width: 32px;
         height: 32px;
         border-radius: 4px;
-        margin-right: 16px;
+        margin-right: 12px;
       }
     }
   }
