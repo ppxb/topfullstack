@@ -12,9 +12,54 @@
     margin-right: 72px;
 
     .c-layout__content-header {
-      min-height: 120px;
-      background: red;
-      margin-bottom: 80px;
+      margin: 26px 0 60px 0;
+      display: flex;
+      align-items: center;
+      font-size: 26px;
+      font-weight: 700;
+      height: fit-content;
+      justify-content: space-between;
+
+      .logo {
+        display: flex;
+        align-items: center;
+        font-size: 26px;
+        font-weight: 700;
+        height: fit-content;
+        color: #2c3e50;
+
+        .svg {
+          width: 44px;
+          height: 44px;
+          margin-right: 10px;
+          color: #6236ff;
+        }
+
+        .currentColor {
+          color: #6236ff;
+        }
+      }
+
+      .nav {
+        display: flex;
+
+        .nav-item {
+          margin-left: 40px;
+          padding: 10px 20px;
+          transition: all 0.25s ease;
+          color: #2c3e50;
+          border-radius: 12px;
+          font-size: 1em;
+
+          &:hover {
+            cursor: pointer;
+          }
+        }
+
+        .active {
+          color: #6236ff;
+        }
+      }
     }
 
     .c-layout__content-main {
@@ -49,6 +94,7 @@
 
     .admin__action {
       display: flex;
+      color: #2c3e50;
       justify-content: space-between;
       font-size: 2em;
       align-items: center;
