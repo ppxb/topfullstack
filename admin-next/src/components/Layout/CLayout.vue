@@ -58,10 +58,7 @@
         <i class="bx bx-exit" style="margin-left:auto"></i>
       </div>
       <div class="admin__info">
-        <c-avatar
-          size="large"
-          src="https://c-ssl.duitang.com/uploads/item/201807/29/20180729125008_ddqhm.thumb.1000_0.jpeg"
-        />
+        <c-avatar size="large" src="https://vuesax.com/avatars/avatar-5.png" />
         <div class="admin__name">Admin</div>
         <div class="admin__role">Administrator</div>
         <div class="admin__status">
